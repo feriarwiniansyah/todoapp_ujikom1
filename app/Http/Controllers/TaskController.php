@@ -24,13 +24,15 @@ class TaskController extends Controller
         $request->validate([
             'name' => 'required|max:100',
             'list_id' => 'required',
-            'description' => 'required|max:100',
-            // 'priority' => 'required|in:high,medium,low'
+            'description' => 'nullable|max:100',
+            'priority' => 'required|in:high,medium,low'
         ]); //digunakan untuk request validasi feild name|max:100 diartikan maximal huruf yang harus diinput dan list_id reuired berarti harus diisi
 
         Task::create([
             'name' => $request->name,
-            'list_id' => $request->list_id
+            'list_id' => $request->list_id,
+            'description' => $request->description,
+            'priority' => $request->priority
         ]);
 
 

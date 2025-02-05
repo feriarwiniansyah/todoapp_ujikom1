@@ -1,20 +1,19 @@
 @extends('layouts.app')
 
 @section('content')
-    <div id="content" class="overflow-hidden card">
+    <!-- Tambahkan margin-top agar konten tidak tertutup oleh navbar -->
+    <div id="content" class="overflow-hidden card bg-transparent mt-5" style="backdrop-filter: blur(3px); background-color: rgba(255, 255, 255, 0.2);">
         @if ($lists->count() == 0) 
-            <div class="d-flex flex-column align-items-center mt-5">
+            <div class="d-flex flex-column align-items-center mt-3">
                 <p class="fw-bold text-center text-muted">Belum ada tugas, ayo tambahkan yang pertama! 🤒</p>
-                {{-- <button type="button" class="btn btn-outline-primary d-flex align-items-center gap-2" data-bs-toggle="modal" data-bs-target="#addListModal">
-                    <i class="bi bi-plus-square fs-3"></i> Tambah List
-                </button> --}}
             </div>
         @endif
 
-        <div class="d-flex gap-3 px-3 flex-nowrap overflow-x-auto pt-3">
+        <!-- Navbar tidak lagi berada di dalam bagian ini -->
+        <div class="d-flex gap-3 px-3 flex-nowrap overflow-x-auto py-2">
             @foreach ($lists as $list)
                 <div class="card flex-shrink-0 shadow-sm border-0 rounded-lg bg-light" style="width: 20rem; max-height: 80vh;">
-                    <div class="card-header d-flex align-items-center justify-content-between text-white rounded-top" style="background-color: #727D73">
+                    <div class="card-header d-flex align-items-center justify-content-between text-white rounded-top" style="background-color: #91AC8F">
                         <h5 class="card-title m-0 fw-bold">{{ $list->name }}</h5>
                         <form action="{{ route('lists.destroy', $list->id) }}" method="POST">
                             @csrf
@@ -30,22 +29,25 @@
                             @if ($task->list_id == $list->id)
                                 <div class="card border-0 shadow-sm">
                                     <div class="card-body d-flex flex-column gap-2">
-                                        <div class="d-flex align-items-center justify-content-between">
-                                            <div>
+                                        <div class="d-flex align-items-center justify-content-between p-2 rounded-top" style="background-color: #B2C9AD">
+                                            <div class="d-flex gap-4">
                                                 <p class="fw-bold m-0 {{ $task->is_completed ? 'text-decoration-line-through text-muted' : '' }}">
                                                     {{ $task->name }}
                                                 </p>
-                                                <span class="badge bg-{{ $task->priorityClass }} text-white">
+                                            </div>
+                                            <div class="d-flex">
+                                                <span class="badge bg-{{ $task->priorityClass }} text-white mx-2">
                                                     {{ ucfirst($task->priority) }}
                                                 </span>
+                                                <form action="{{ route('tasks.destroy', $task->id) }}" method="POST">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-sm p-0 text-danger">
+                                                        <i class="bi bi-x-circle fs-5"></i>
+                                                    </button>
+                                                </form>
+                                                
                                             </div>
-                                            <form action="{{ route('tasks.destroy', $task->id) }}" method="POST">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="btn btn-sm p-0 text-danger">
-                                                    <i class="bi bi-x-circle fs-5"></i>
-                                                </button>
-                                            </form>
                                         </div>
                                         <p class="text-muted small text-truncate">{{ $task->description }}</p>
                                     </div>
@@ -75,7 +77,7 @@
                 </div>
             @endforeach
 
-            <button type="button" class="btn btn-outline-primary flex-shrink-0 d-flex justify-content-center align-items-center gap-2 p-3 rounded-lg" style="width: 20rem; height: fit-content;" data-bs-toggle="modal" data-bs-target="#addListModal">
+            <button type="button" class="btn btn-outline-primary flex-shrink-0 d-flex justify-content-center align-items-center gap-2 p-3 rounded-lg mb-3" style="width: 20rem; height: fit-content;" data-bs-toggle="modal" data-bs-target="#addListModal">
                 <i class="bi bi-plus-square fs-4"></i> Tambah List Baru
             </button>
         </div>

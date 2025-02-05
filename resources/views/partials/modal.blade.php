@@ -27,25 +27,24 @@
         <form action="{{ route('tasks.store') }}" method="POST" class="modal-content">
             @method('POST')
             @csrf
-            <div class="modal-header">
+            <div class="modal-header bg-primary">
                 <h1 class="modal-title fs-5" id="addTaskModalLabel">Tambah Task</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <input type="text" id="taskListId" name="list_id" hidden>
                 <div class="mb-3">
-                    <label for="name" class="form-label">Nama</label>
+                    <label for="name" class="form-label">Nama :</label>
                     <input type="text" class="form-control" id="name" name="name"
                         placeholder="Masukkan nama list">
                 </div>
-                <input type="text" id="taskListId" name="list_id" hidden>
                 <div class="mb-3">
-                    <label for="name" class="form-label">Deskripsi</label>
+                    <label for="" class="form-label">Deskripsi :</label>
                     <input type="text" class="form-control" id="description" name="description"
-                        placeholder="Masukkan nama list">
+                        placeholder="Apakah deskripsi kegiatan anda??🤔">
                 </div>
                 <div class="col-md-12 mb-3">
-                    <label for="priority" class="form-label">Priority</label>
+                    <label for="priority" class="form-label">Priority :</label>
                     <select class="form-control" name="priority" id="taskListId" name="list_id" required>
                         <option value="medium">Medium</option>
                         <option value="high">High</option>

@@ -11,6 +11,13 @@
     <!-- Import Bootstrap CSS -->
     <link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/bootstrap-icons/font/bootstrap-icons.min.css') }}">
+    <style>
+        body {
+            background-image: url("{{ asset('image/background.jpeg') }}");
+        };
+
+        
+    </style>
 </head>
 
 <body>
@@ -22,7 +29,7 @@
     </nav>
 
     <!-- Main Content -->
-    <div class="container mt-5 pt-4">
+    <div class="container mt-1 pt-4">
         @yield('content')
     </div>
 
