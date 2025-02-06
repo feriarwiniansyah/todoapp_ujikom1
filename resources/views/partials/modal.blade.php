@@ -39,16 +39,16 @@
                         placeholder="Masukkan nama list">
                 </div>
                 <div class="mb-3">
-                    <label for="" class="form-label">Deskripsi :</label>
+                    <label for="description" class="form-label">Deskripsi :</label>
                     <input type="text" class="form-control" id="description" name="description"
                         placeholder="Apakah deskripsi kegiatan anda??🤔">
                 </div>
-                <div class="col-md-12 mb-3">
+                <div class="mb-3">
                     <label for="priority" class="form-label">Priority :</label>
                     <select class="form-control" name="priority" id="taskListId" name="list_id" required>
-                        <option value="medium">Medium</option>
-                        <option value="high">High</option>
-                        <option value="low">Low</option>
+                            <option value="medium">Medium</option>
+                            <option value="high">High</option>
+                            <option value="low">Low</option>
                     </select>    
                 </div>
             </div>

@@ -14,18 +14,21 @@ class TaskListSeeder extends Seeder
      */
     public function run(): void
     {
-        $lists /*lists digunakan untuk judul*/ = [
+        $lists /*lists adalah variabel digunakan untuk judul*/ = [
             [
-                'name' => 'Liburan',
+                'name' => 'Healing', //syntax ini digunakan untuk menambahkan Healing kedalam colom name di table tasklist
             ],
             [
-                'name' => 'Belajar',
+                'name' => 'Belajar', 
             ],
             [
                 'name' => 'Tugas',
+            ],
+            [
+                'name' => 'Wishlist'
             ]
         ];
 
-        TaskList::insert($lists);
+        TaskList::insert($lists); //codingan untuk menambahkan data kedalam database
     }
 } 

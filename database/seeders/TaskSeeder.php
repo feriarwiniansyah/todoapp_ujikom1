@@ -15,14 +15,14 @@ class TaskSeeder extends Seeder
      */
     public function run(): void
     {
-        $tasks = [
+        $tasks = [ //syntax ini digunakan untuk menambahkan Healing kedalam colom name di table task
             [
                 'name' => 'Belajar Laravel',
                 'description' => 'Belajar Laravel di santri koding',
                 'is_completed' => false,
                 'priority' => 'medium',
                 'list_id' => TaskList::where('name', 'Belajar')->first()->id,
-            ],
+            ], // syntax ini digunakan untuk menambahkan data data diatas kedalam colom colom yang tersedia di table task
             [
                 'name' => 'Belajar React',
                 'description' => 'Belajar React di WPU',
@@ -65,8 +65,15 @@ class TaskSeeder extends Seeder
                 'priority' => 'high',
                 'list_id' => TaskList::where('name', 'Tugas')->first()->id,
             ],
+            [
+                'name' => 'Ganti',
+                'description' => 'Membuat project Todo App untuk ujikom',
+                'is_completed' => false,
+                'priority' => 'high',
+                'list_id' => TaskList::where('name', 'Tugas')->first()->id,
+            ],
         ];
 
-        Task::insert($tasks);
+        Task::insert($tasks); //codingan untuk menambahkan data kedalam database
     }
 }
