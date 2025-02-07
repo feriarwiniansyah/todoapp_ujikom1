@@ -35,14 +35,14 @@ class TaskSeeder extends Seeder
                 'description' => 'Liburan ke Pantai bersama keluarga',
                 'is_completed' => false,
                 'priority' => 'low',
-                'list_id' => TaskList::where('name', 'Liburan')->first()->id,
+                'list_id' => TaskList::where('name', 'Healing')->first()->id,
             ],
             [
                 'name' => 'Villa',
                 'description' => 'Liburan ke Villa bersama teman sekolah',
                 'is_completed' => true,
                 'priority' => 'medium',
-                'list_id' => TaskList::where('name', 'Liburan')->first()->id,
+                'list_id' => TaskList::where('name', 'Healing')->first()->id,
             ],
             [
                 'name' => 'Matematika',
@@ -66,14 +66,14 @@ class TaskSeeder extends Seeder
                 'list_id' => TaskList::where('name', 'Tugas')->first()->id,
             ],
             [
-                'name' => 'Ganti',
-                'description' => 'Membuat project Todo App untuk ujikom',
+                'name' => 'Lulus',
+                'description' => 'Lulus Segala-galanya',
                 'is_completed' => false,
                 'priority' => 'high',
-                'list_id' => TaskList::where('name', 'Tugas')->first()->id,
+                'list_id' => TaskList::where('name', 'Wishlist')->first()->id,
             ],
         ];
 
-        Task::insert($tasks); //codingan untuk menambahkan data kedalam database
+        Task::insert($tasks); 
     }
 }

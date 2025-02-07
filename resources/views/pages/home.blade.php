@@ -2,7 +2,7 @@
 
 @section('content')
     <!-- Tambahkan margin-top agar konten tidak tertutup oleh navbar -->
-    <div id="content" class="overflow-hidden card bg-transparent mt-5" style="backdrop-filter: blur(3px); background-color: rgba(255, 255, 255, 0.2);">
+    <div id="content" class="overflow-hidden card bg-transparent mt-4" style="backdrop-filter: blur(3px); background-color: rgba(255, 255, 255, 0.2);">
         @if ($lists->count() == 0) 
             <div class="d-flex flex-column align-items-center mt-3">
                 <p class="fw-bold text-center text-muted">Belum ada tugas, ayo tambahkan yang pertama! 🤒</p>
@@ -31,9 +31,10 @@
                                     <div class="card-body d-flex flex-column gap-2">
                                         <div class="d-flex align-items-center justify-content-between p-2 rounded-top" style="background-color: #B2C9AD">
                                             <div class="d-flex gap-4">
-                                                <p class="fw-bold m-0 {{ $task->is_completed ? 'text-decoration-line-through text-muted' : '' }}">
+                                                <a href="{{ route('tasks.show', $task->id)}}" 
+                                                    class="fw-bold m-0 {{ $task->is_completed ? 'text-decoration-line-through text-muted' : '' }}">
                                                     {{ $task->name }}
-                                                </p>
+                                                </a>
                                             </div>
                                             <div class="d-flex">
                                                 <span class="badge bg-{{ $task->priorityClass }} text-white mx-2">
@@ -70,7 +71,6 @@
                             <i class="bi bi-plus-lg"></i> Tambah Tugas
                         </button>
                     </div>
-
                     <div class="card-footer bg-light d-flex justify-content-between align-items-center">
                         <p class="card-text text-muted small">{{ $list->tasks->count() }} Tugas</p>
                     </div>

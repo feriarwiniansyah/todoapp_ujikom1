@@ -52,4 +52,15 @@ class TaskController extends Controller
 
         return redirect()->back();
     }
+
+    public function show($id){
+        $task = Task::FindOrFail($id); //FindOrFail( untuk memilih data dari database dan data yang dipilih adalah yang di taro di dalam kurung
+
+        $data = [
+            'title' => 'Details',
+            'task' => $task
+        ];
+
+        return view('pages.detail', $data);
+    }
 }

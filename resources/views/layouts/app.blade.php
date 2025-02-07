@@ -15,17 +15,13 @@
         body {
             background-image: url("{{ asset('image/background.jpeg') }}");
         };
-
-        
     </style>
 </head>
 
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
-        <div class="container">
-            @include('partials.navbar')
-        </div>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #638C6D">
+        @include('partials.navbar')
     </nav>
 
     <!-- Main Content -->
