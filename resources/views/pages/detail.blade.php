@@ -17,7 +17,7 @@
                     </span>
                     <span class="badge text-bg-{{ $task->status ? 'success' : 'danger' }} badge-pill"
                         style="width: fit-content">
-                        {{ $task->status ? 'Selesai' : 'Belum Selesai' }}
+                        {{ $task->is_completed ? 'Selesai' : 'Belum Selesai' }}
                     </span>
                 </div>
             </div>    

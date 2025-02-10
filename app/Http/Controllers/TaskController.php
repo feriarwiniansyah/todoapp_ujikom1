@@ -58,7 +58,8 @@ class TaskController extends Controller
 
         $data = [
             'title' => 'Details',
-            'task' => $task
+            'task' => $task,
+            'is_completed' => true
         ];
 
         return view('pages.detail', $data);
