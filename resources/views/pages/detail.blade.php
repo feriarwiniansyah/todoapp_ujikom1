@@ -15,7 +15,7 @@
                     <span class="badge text-bg-{{ $task->priorityClass }} badge-pill" style="width: fit-content">
                         {{ $task->priority }}
                     </span>
-                    <span class="badge text-bg-{{ $task->status ? 'success' : 'danger' }} badge-pill"
+                    <span class="badge text-bg-{{ $task->is_completed ? 'success' : 'danger' }} badge-pill"
                         style="width: fit-content">
                         {{ $task->is_completed ? 'Selesai' : 'Belum Selesai' }}
                     </span>
