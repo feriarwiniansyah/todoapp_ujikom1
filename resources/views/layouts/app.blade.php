@@ -13,24 +13,31 @@
     <link rel="stylesheet" href="{{ asset('vendor/bootstrap-icons/font/bootstrap-icons.min.css') }}">
     <style>
         body {
-            background-image: url("{{ asset('image/background.jpeg') }}");
+            background-color: #E6F4F1;
         };
     </style>
 </head>
 
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #638C6D">
-        @include('partials.navbar')
-    </nav>
+    <div class="d-flex">
+        <!-- Sidebar -->
+        <div class="bg-success text-white vh-100" style="width: 250px;">
+            @include('partials.sidebar')
+        </div>
 
-    <!-- Main Content -->
-    <div class="container mt-1 pt-4">
-        @yield('content')
+        <!-- Main Content -->
+        <div class="flex-grow-1 p-2">
+            @yield('content')
+        </div>
     </div>
 
     <!-- Modal Section -->
     @include('partials.modal')
+
+    <!-- Scripts -->
+    <script src="{{ asset('js/script.js') }}"></script>
+    <script src="{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}"></script> <!-- Import Bootstrap JS -->
+</body>
 
     <!-- Scripts -->
     <script src="{{ asset('js/script.js') }}"></script>

@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-    <div id="content" class="row card mt-4" ">
+    <div id="content" class="row card mx-4 p-2 w-75">
         <div class="">
-            <div class="p-2 rounded mb-3 card-title" style="background-color: #B2C9AD">
-                <h1 class="mb-3">Halaman Details</h1>
+            <div class="p-2 rounded-pill card-title" style="background-color: #B2C9AD">
+                <h1 class="mb-3 text-center text-white">Halaman Details</h1>
             </div>
             <div class="row card-body">
                 <div class="col-8">

@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const content = document.getElementById("content");
-    const navbarHeight = document.querySelector(".navbar").offsetHeight;
-    content.style.paddingTop = `${navbarHeight}px`;
+    // const navbarHeight = document.querySelector(".navbar").offsetHeight;
+    // content.style.paddingTop = `${navbarHeight}px`;
 
     const addTaskModal = document.getElementById("addTaskModal");
     addTaskModal.addEventListener("show.bs.modal", (e) => {
