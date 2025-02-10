@@ -10,12 +10,19 @@ class TaskController extends Controller
 {
     public function index() /* digunakan unutk view */ {
         /* digunakan untuk mengambil task dan tasklist dari model*/
+        
         $data = [
             'title' => 'Home', 
             'lists' => TaskList::all(),
             'tasks' => Task::orderBy('created_at', 'desc')->get(), //digunakan untuk mengurutkan dari terbesar ke terkecil
-            'priorities' => Task::PRIORITIES //untuk mnegambil nilai priorities dari const yang ada di app\models\task
+            'priorities' => Task::PRIORITIES ,//untuk mnegambil nilai priorities dari const yang ada di app\models\task
+            'highPriorityCount' => Task::where('priority', 'high')->count(),
+            'mediumPriorityCount' => Task::where('priority', 'medium')->count(),
+            'lowPriorityCount' => Task::where('priority', 'low')->count(),
+            'uncompletedCount' => Task::where('is_completed', false)->count(),
         ];
+        
+
 
         return view('pages.home', $data);
     }
@@ -53,13 +60,12 @@ class TaskController extends Controller
         return redirect()->back();
     }
 
-    public function show($id){
-        $task = Task::FindOrFail($id); //FindOrFail( untuk memilih data dari database dan data yang dipilih adalah yang di taro di dalam kurung
+    public function show($id){$task = Task::FindOrFail($id); //FindOrFail( untuk memilih data dari database dan data yang dipilih adalah yang di taro di dalam kurung
 
         $data = [
             'title' => 'Details',
             'task' => $task,
-            'is_completed' => true
+            
         ];
 
         return view('pages.detail', $data);

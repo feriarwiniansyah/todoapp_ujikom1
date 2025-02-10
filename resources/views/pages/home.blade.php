@@ -10,9 +10,46 @@
         @endif
 
         <!-- Navbar tidak lagi berada di dalam bagian ini -->
+        <div class="card p-2 m-2">
+            <h1>Jumlah :</h1>
+            <div class="d-flex gap-2 justify-content-between align-items-evenly px-3">
+                <div class="d-flex flex-column align-items-center px-5 pt-1 rounded shadow-lg" style="background-color: #91AC8F;">
+                    <i class="bi bi-card-list fs-1 p-2  text-dark rounded mb-1"></i> 
+                    <h6 class="mt-2 mb-1">Jumlah Task :</h6>
+                    <p class="mb-0 fw-bold fs-4">{{ $lists->count() }}</p>
+                </div>
+                <div class="d-flex flex-column align-items-center px-5 pt-1 rounded shadow-lg" style="background-color: #A1C298;;">
+                    <i class="bi bi-star fs-1 p-2  text-dark rounded mb-1"></i> 
+                    <h6 class="mt-2 mb-1">Tugas Low :</h6>
+                    <p class="mb-0 fw-bold fs-4">{{ $lowPriorityCount }}</p>
+                </div>
+                <div class="d-flex flex-column align-items-center px-5 pt-1 rounded shadow-lg" style="background-color: #B4CFB0;">
+                    <i class="bi bi-star-half fs-1 p-2  text-dark rounded mb-1"></i> 
+                    <h6 class="mt-2 mb-1">Tugas Medium :</h6>
+                    <p class="mb-0 fw-bold fs-4">{{ $mediumPriorityCount }}</p>
+                </div>
+                <div class="d-flex flex-column align-items-center px-5 pt-1 rounded shadow-lg" style="background-color: #FFD56F;;">
+                    <i class="bi bi-star-fill fs-1 p-2  text-dark rounded mb-1"></i> 
+                    <h6 class="mt-2 mb-1">Tugas High :</h6>
+                    <p class="mb-0 fw-bold fs-4">{{ $highPriorityCount }}</p>
+                </div>
+                <div class="d-flex flex-column align-items-center px-5 pt-1 rounded shadow-lg" style="background-color: #E3651D;">
+                    <i class="bi bi-card-list fs-1 p-2  text-dark rounded mb-1"></i> 
+                    <h6 class="mt-2 mb-1">Belum Selesai :</h6>
+                    <p class="mb-0 fw-bold fs-4">{{ $uncompletedCount }}</p>
+                </div>
+                                
+               {{--}} <div>
+                    <h3>{{ $completedCount }}</h3>
+                </div> --}}
+           </div>
+        </div>
+       
+            
         <div class="d-flex gap-3 px-3 flex-nowrap overflow-x-auto py-2">
             @foreach ($lists as $list)
                 <div class="card flex-shrink-0 shadow-sm border-0 rounded-lg bg-light" style="width: 20rem; max-height: 80vh;">
+                   
                     <div class="card-header d-flex align-items-center justify-content-between text-white rounded-top" style="background-color: #91AC8F">
                         <h5 class="card-title m-0 fw-bold">{{ $list->name }}</h5>
                         <form action="{{ route('lists.destroy', $list->id) }}" method="POST">
@@ -24,7 +61,7 @@
                         </form>
                     </div>
 
-                    <div class="card-body d-flex flex-column gap-2 overflow-auto">
+                    <div class="card-body d-flex flex-column gap-2 overflow-auto" style="background-color: #deffd646">
                         @foreach ($tasks as $task)
                             @if ($task->list_id == $list->id)
                                 <div class="card border-0 shadow-sm">
@@ -71,7 +108,7 @@
                             <i class="bi bi-plus-lg"></i> Tambah Tugas
                         </button>
                     </div>
-                    <div class="card-footer bg-light d-flex justify-content-between align-items-center">
+                    <div class="card-footer d-flex justify-content-between align-items-center" style="background-color: #E8F1E6">
                         <p class="card-text text-muted small">{{ $list->tasks->count() }} Tugas</p>
                     </div>
                 </div>
