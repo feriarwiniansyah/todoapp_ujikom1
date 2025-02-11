@@ -1,4 +1,4 @@
-<nav class="navbar navbar-dark rounded-pill w-75" style="background-color: #638C6D">
+<nav class="navbar navbar-dark rounded-pill w-100" style="background-color: #0B2D64">
     <div class="container d-flex justify-content-center">
         <a class="navbar-brand fw-bolder" href="#">{{ config('app.name') }}</a>
     </div>

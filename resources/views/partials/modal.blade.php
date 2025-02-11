@@ -3,7 +3,7 @@
         <form action="{{ route('lists.store') }}" method="POST" class="modal-content"> {{-- digunakan unutk mengarahkan ke validasi store di taskcontroller--}}
             @method('POST')
             @csrf
-            <div class="modal-header">
+            <div class="modal-header" style="background-color: #0B2D64">
                 <h1 class="modal-title fs-5" id="addListModalLabel">Tambah List</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>

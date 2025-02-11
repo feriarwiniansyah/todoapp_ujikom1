@@ -1,8 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-    <div id="content" class="row card mx-4 p-2 w-75">
-        <div class="">
+    {{-- <div id="content" class="container">
+        <div class="d-flex align-items-center justify-content center"></div>
+    </div> --}}
+    <div id="content" class="row card mx-4 p-2 w-75"> --}}
+        {{-- {{-- <div class="">
             <div class="p-2 rounded-pill card-title" style="background-color: #B2C9AD">
                 <h1 class="mb-3 text-center text-white">Halaman Details</h1>
             </div>
@@ -22,5 +25,5 @@
                 </div>
             </div>    
         </div>
-    </div>
+    </div> --}}
 @endsection

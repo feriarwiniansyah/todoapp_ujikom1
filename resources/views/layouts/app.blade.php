@@ -18,14 +18,12 @@
     </style>
 </head>
 
-<body>
+<body class="overflow-x-hidden">
     <div class="d-flex">
         <!-- Sidebar -->
-        <div class="bg-success text-white vh-100" style="width: 250px;">
             @include('partials.sidebar')
-        </div>
-
         <!-- Main Content -->
+
         <div class="flex-grow-1 p-2">
             @yield('content')
         </div>
