@@ -9,5 +9,6 @@ Route::get('/', [TaskController::class, 'index'])->name('home');
 
 Route::resource('lists', TaskListController::class);
 
-Route::resource('tasks', TaskController::class); // mengambil semua function dari taskcontroller
+Route::resource('tasks', TaskController::class);
 Route::patch('/tasks/{task}/complete', [TaskController::class, 'complete'])->name('tasks.complete');
+Route::patch('/tasks/{task}/change-list', [TaskController::class, 'changeList'])->name('tasks.changeList');

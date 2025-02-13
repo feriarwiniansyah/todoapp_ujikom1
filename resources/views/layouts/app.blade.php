@@ -14,6 +14,7 @@
     <style>
         body {
             background-color: #E6F4F1;
+        
         };
     </style>
 </head>

@@ -65,9 +65,42 @@ class TaskController extends Controller
         $data = [
             'title' => 'Details',
             'task' => $task,
+            'lists' => TaskList::all(),
             
         ];
 
         return view('pages.detail', $data);
     }
-}
+
+    public function changeList(Request $request, Task $task)
+    {
+        $request->validate([
+            'list_id' => 'required|exists:task_lists,id',
+        ]);
+
+        Task::findOrFail($task->id)->update([
+            'list_id' => $request->list_id
+        ]);
+
+        return redirect()->back()->with('success', 'List berhasil diperbarui!');
+    }
+
+    public function update(Request $request, Task $task)
+    {
+        $request->validate([
+            'list_id' => 'required',
+            'name' => 'required|max:100',
+            'description' => 'max:255',
+            'priority' => 'required|in:low,medium,high'
+        ]);
+
+        Task::findOrFail($task->id)->update([
+            'list_id' => $request->list_id,
+            'name' => $request->name,
+            'description' => $request->description,
+            'priority' => $request->priority
+        ]);
+
+        return redirect()->back()->with('success', 'Task berhasil diperbarui!');
+    }
+}    

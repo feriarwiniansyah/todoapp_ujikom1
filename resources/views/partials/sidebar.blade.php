@@ -8,12 +8,12 @@
         <hr>
         <ul class="nav nav-pills flex-column mb-auto">
             <li class="nav-item">
-                <a href="#" class="nav-link text-white">
+                <a href="{{route('tasks.index')}}" class="nav-link text-white">
                     <i class="bi bi-house-door me-2"></i> Dashboard
                 </a>
             </li>
             <li>
-                <a href="#" class="nav-link text-white">
+                <a href="#content" class="nav-link text-white">
                     <i class="bi bi-card-checklist me-2"></i> Tasks
                 </a>
             </li>
