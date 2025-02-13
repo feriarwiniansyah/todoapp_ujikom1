@@ -8,9 +8,39 @@ use Illuminate\Http\Request;
 
 class TaskController extends Controller
 {
-    public function index() /* digunakan unutk view */ {
+    public function index(Request $request) /* digunakan unutk view */
         /* digunakan untuk mengambil task dan tasklist dari model*/
-        
+        {
+            $query = $request->input('query');
+    
+            if ($query) {
+                $tasks = Task::where('name', 'like', "%{$query}%")
+                    ->orWhere('description', 'like', "%{$query}%")
+                    ->latest()
+                    ->get();
+    
+                $lists = TaskList::where('name', 'like', "%{$query}%")
+                    ->orWhereHas('tasks', function ($q) use ($query) {
+                        $q->where('name', 'like', "%{$query}%")
+                            ->orWhere('description', 'like', "%{$query}%");
+                    })
+                    ->with('tasks')
+                    ->get();
+    
+    
+                if ($tasks->isEmpty()) {
+                    $lists->load('tasks');
+                } else {
+                    $lists->load(['tasks' => function ($q) use ($query) {
+                        $q->where('name', 'like', "%{$query}%")
+                            ->orWhere('description', 'like', "%{$query}%");
+                    }]);
+                }
+            } else {
+                $tasks = Task::latest()->get();
+                $lists = TaskList::with('tasks')->get();
+            }
+            
         $data = [
             'title' => 'Home', 
             'lists' => TaskList::all(),

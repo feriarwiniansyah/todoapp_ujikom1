@@ -25,8 +25,17 @@ class TaskListSeeder extends Seeder
                 'name' => 'Tugas',
             ],
             [
-                'name' => 'Wishlist'
-            ]
+                'name' => 'Wishlist',
+            ],
+            [
+                'name' => 'Wishlist1'
+            ],
+            [
+                'name' => 'Wishlist2'
+            ],
+            [
+                'name' => 'Wishlist3'
+            ],
         ];
 
         TaskList::insert($lists); //codingan untuk menambahkan data kedalam database

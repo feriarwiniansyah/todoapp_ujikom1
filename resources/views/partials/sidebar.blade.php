@@ -1,10 +1,14 @@
 <div class="d-flex">
     <!-- Sidebar -->
     <div class="d-flex flex-column flex-shrink-0 p-3 text-white" style="width: 175px; background-color:  #0B2D64; height: 120vh">
-        <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-            <i class="bi bi-list fs-3 me-2"></i>
-            <span class="fs-4">Menu</span>
-        </a>
+        <div class="row my-3">
+            <div class="col-12">
+                <form action="{{ route('home') }}" method="GET" class="d-flex gap-2">
+                    <input type="text" class="form-control w-100" name="query" placeholder="Cari task/list" value="{{ request()->query('query') }}">
+                    <button type="submit" class="btn btn-outline-primary"><i class="bi bi-search"></i></button>
+                </form>
+            </div>
+        </div>
         <hr>
         <ul class="nav nav-pills flex-column mb-auto">
             <li class="nav-item">
@@ -17,17 +21,8 @@
                     <i class="bi bi-card-checklist me-2"></i> Tasks
                 </a>
             </li>
-            <li>
-                <a href="#" class="nav-link text-white">
-                    <i class="bi bi-bar-chart me-2"></i> Reports
-                </a>
-            </li>
-            <li>
-                <a href="#" class="nav-link text-white">
-                    <i class="bi bi-gear me-2"></i> Settings
-                </a>
-            </li>
         </ul>
+        
         <hr>
         <div class="dropdown">
             <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser" data-bs-toggle="dropdown" aria-expanded="false">
