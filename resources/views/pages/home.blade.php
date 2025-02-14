@@ -5,7 +5,7 @@
         <div>
             @include('partials.count')
         </div>
-        <div>
+    <div>
     <!-- Card Data Task -->
     <div class="d-flex p-1 mx-1 justify-content-center" style=" max-width: 1500px;">
         {{-- <h6 class="text-dark fs-5">Task :</h6> --}}

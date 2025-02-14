@@ -4,7 +4,8 @@
         <div class="row my-3">
             <div class="col-12">
                 <form action="{{ route('home') }}" method="GET" class="d-flex gap-2">
-                    <input type="text" class="form-control w-100" name="query" placeholder="Cari task/list" value="{{ request()->query('query') }}">
+                    <input type="text" class="form-control w-100" name="query" placeholder="Cari task/list" 
+                    value="{{ request()->query('query') }}">
                     <button type="submit" class="btn btn-outline-primary"><i class="bi bi-search"></i></button>
                 </form>
             </div>
