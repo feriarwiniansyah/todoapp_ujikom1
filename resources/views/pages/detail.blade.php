@@ -18,11 +18,11 @@
 
         <div class="row my-3">
             <div class="col-8">
-                <div class="card" style="height: 80vh;">
+                <div class="col card" style="height: 40vh;">
                     <div class="card-header d-flex align-items-center justify-content-between overflow-hidden">
                         <h3 class="fw-bold fs-4 text-truncate mb-0" style="width: 80%">
                             {{ $task->name }}
-                            <span class="fs-6 fw-medium">di {{ $task->list->name }}</span>
+                            {{-- <span class="fs-6 fw-medium">di {{ $task->list->name }}</span> --}}
                         </h3>
                         <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal"
                             data-bs-target="#editTaskModal">
@@ -44,6 +44,10 @@
                         </form>
                     </div>
                 </div>
+                <div class="col-4 mt-2 card p-5 badge text-bg-{{ $task->priorityClass }} badge-pill w-100" style="height: 39vh">
+                    {{-- <h4>Priotitas:</h4> --}}
+                    <h1 style="font-family:fantasy;">{{ $task->priority }}</h1>                    </h6>
+                </div>
             </div>
             <div class="col-4">
                 <div class="card" style="height: 80vh;">
@@ -51,23 +55,20 @@
                         <h3 class="fw-bold fs-4 text-truncate mb-0" style="width: 80%">Details</h3>
                     </div>
                     <div class="card-body d-flex flex-column gap-2">
+                        <h4>Berada di :</h4>
                         <form action="{{ route('tasks.changeList', $task->id) }}" method="POST">
                             @csrf
                             @method('PATCH')
                             <select class="form-select" name="list_id" onchange="this.form.submit()">
                                 @foreach ($lists as $list)
+                                
                                     <option value="{{ $list->id }}" {{ $list->id == $task->list_id ? 'selected' : '' }}>
                                         {{ $list->name }}
                                     </option>
                                 @endforeach
                             </select>
                         </form>
-                        <h6 class="fs-6">
-                            Priotitas:
-                            <span class="badge text-bg-{{ $task->priorityClass }} badge-pill" style="width: fit-content">
-                                {{ $task->priority }}
-                            </span>
-                        </h6>
+                        
                     </div>
                     <div class="card-footer">
                     </div>
