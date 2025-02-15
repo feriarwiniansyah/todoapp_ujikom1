@@ -14,17 +14,17 @@
     <style>
         body {
             background-color: #E6F4F1;
-        
         };
     </style>
 </head>
 
-<body class="overflow-x-hidden">
+<body class="overflow-x-hidden"> <!-- Disable horizontal scroll -->
     <div class="d-flex">
+
         <!-- Sidebar -->
             @include('partials.sidebar')
-        <!-- Main Content -->
 
+        <!-- Main Content -->
         <div class="flex-grow-1 p-2">
             @yield('content')
         </div>
@@ -32,11 +32,6 @@
 
     <!-- Modal Section -->
     @include('partials.modal')
-
-    <!-- Scripts -->
-    <script src="{{ asset('js/script.js') }}"></script>
-    <script src="{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}"></script> <!-- Import Bootstrap JS -->
-</body>
 
     <!-- Scripts -->
     <script src="{{ asset('js/script.js') }}"></script>
