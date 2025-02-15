@@ -29,7 +29,7 @@ class Task extends Model
 
     public function getPriorityClassAttribute() {
         return match($this->attributes['priority']) {
-            'low' => 'success',
+            'low' => 'success', 
             'medium' => 'warning',
             'high' => 'danger',
             default => 'secondary'
