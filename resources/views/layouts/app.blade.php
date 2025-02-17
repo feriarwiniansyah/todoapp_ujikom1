@@ -18,15 +18,15 @@
     </style>
 </head>
 
-<body class="overflow-x-hidden"> <!-- Disable horizontal scroll -->
+<body class="overflow-x-hidden"> <!-- overflow digunakan untuk Disable horizontal scroll -->
     <div class="d-flex">
-
         <!-- Sidebar -->
             @include('partials.sidebar')
 
         <!-- Main Content -->
         <div class="flex-grow-1 p-2">
-            @yield('content') <!--yeild adalah synatx yang digunakan ubtuk memberikan tempat pada content yang diisi content dari view-->
+            @yield('content') 
+            <!--yeild adalah syntax yang digunakan untuk memberikan tempat pada content yang akan diisi dari view yang menjalankan section content -->
         </div>
     </div>
 
