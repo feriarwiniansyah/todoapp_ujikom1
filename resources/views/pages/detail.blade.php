@@ -55,12 +55,11 @@
             </div> {{-----Bagian ini menampilkan list yang terkait dengan task tersebut.----}}
             <div class="d-flex gap-2">
                 <div class="col mt-2 card p-5 badge text-bg-{{ $task->priorityClass }} badge-pill align-items-center" style="height: 20vh">
-                    {{-- <h4>Priotitas:</h4> --}}
-                    <h1 style="font-family:fantasy;">{{ $task->priority }}</h1>
+                    <h1 style="font-family:fantasy;">{{ $task->priority }}</h1> {{--ini digunakan untuk menampilkan priority dari setiap task yang variabelnya diambil dari taskcontroller--}}
                 </div>
                 <div class="col mt-2 card p-5 badge  text-{{$task->is_completed ? 'success' : 'danger'}} badge-pill align-items-center" style="height: 20vh">
-                        <h3>{{ $task->is_completed ? 'Selesai' : 'Belum Selesai' }}</h3>
-                </div> {{-----Bagian ini menampilkan prioritas dan is_complete task.----}}
+                        <h3>{{ $task->is_completed ? 'Selesai' : 'Belum Selesai' }}</h3> {{--ini digunakan untuk menampilkan is_complete dari setiap task yang variabelnya diambil dari taskcontroller--}}
+                </div>
             </div>
         </div>
         <div class="col-4">
