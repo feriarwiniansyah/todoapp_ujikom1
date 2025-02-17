@@ -17,28 +17,30 @@
 
     <!-- Bagian Informasi -->
     <div class="container">
-        <div class="row gap-1 justify-content-center ">
+        <div class="row gap-2 justify-content-center ">
             <!-- Kolom profile -->
-            <div class="col-md-4 mb-4 card rounded-5 p-3 w-50">
+            <div class="col-md-4 mb-4 card rounded-5 p-3">
                 <h4 class="font">
-                    <strong>My Name is:</strong> <br>
-                    Feri Arwiniansyah <br><br>
-                    <strong>As a student at:</strong> <br>
-                    SMKN 2 SUBANG <br><br>
-                    <strong>I'm in the:</strong> <br>
-                    Engineering Software Class <br><br>
-                    <strong>Born on:</strong> <br>
-                    17 July 2007
+                    <strong>My Name is:</strong>
+                    <p>Feri Arwiniansyah</p> <hr>
+                    <strong>As a student at:</strong>
+                    <p>SMKN 2 SUBANG</p> <hr>
+                    <strong>I'm in the Class:</strong>
+                    <p>Engineering Software</p> <hr> 
+                    <strong>Born on:</strong>
+                    <p>17 July 2007</p> <hr>
                 </h4>
             </div>
 
             <!-- Kolom kontak -->
-            <div class="col-md-8 mb-4 card rounded-5 p-3" style="width: 45%">
+            <div class="col-md-4 mb-4 card rounded-5 p-3 w-50">
                 <h4>
-                    <strong>Email:</strong> <br>
-                    feri17arwiniansyah@gmail.com <br><br>
-                    <strong>Phone:</strong> <br>
-                    +62 838-9228-5394
+                    <strong>Email:</strong>
+                    <p>feri17arwiniansyah@gmail.com</p> <hr> 
+                    <strong>Phone:</strong>
+                    <p>+62 838-9228-5394</p> <hr> 
+                    <strong>Github:</strong>
+                    <p>feriarwiniansyah117</p> <hr>
                 </h4>
             </div>        
         </div>
