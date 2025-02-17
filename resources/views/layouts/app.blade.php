@@ -11,6 +11,7 @@
     <!-- Import Bootstrap CSS -->
     <link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/bootstrap-icons/font/bootstrap-icons.min.css') }}">
+    {{--style dengan css--}}
     <style>
         body {
             background-color: #E6F4F1;
