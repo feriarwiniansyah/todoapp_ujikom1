@@ -1,7 +1,7 @@
 <div class="d-flex">
     <!-- Sidebar -->
     <div class="d-flex flex-column flex-shrink-0 p-3 text-white" style="width: 180px; background-color:  #0B2D64; height: 120vh">
-        <a href="">
+        <a href="{{ route('about')}}">
             <div class="d-flex flex-column align-items-center justify-content-center">
                 <div class="mb-2">
                     <img class="rounded-circle" src="{{ asset('image/feri.jpg')}}" alt="Feri" style="width: 60px; height: 60px; object-fit: cover;">

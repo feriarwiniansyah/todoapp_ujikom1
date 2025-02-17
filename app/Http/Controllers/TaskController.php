@@ -47,6 +47,14 @@ class TaskController extends Controller
         return view('pages.home', $data);
     }
 
+    public function about() {
+        $data = [
+            'title' => 'About',
+        ];
+
+        return view('pages.about', $data);
+    }
+
     public function store(Request $request) {
         $request->validate([
             'name' => 'required|max:100',
