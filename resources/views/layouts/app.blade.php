@@ -26,7 +26,7 @@
 
         <!-- Main Content -->
         <div class="flex-grow-1 p-2">
-            @yield('content')
+            @yield('content') <!--yeild adalah synatx yang digunakan ubtuk memberikan tempat pada content yang diisi content dari view-->
         </div>
     </div>
 
