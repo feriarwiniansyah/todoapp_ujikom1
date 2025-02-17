@@ -3,13 +3,13 @@
 @section('content')
 <div id="content" class="container">
     <div class="d-flex align-items-center">
-        <a href="{{ route('home') }}" class="btn btn-sm">
+        <a href="{{ route('home') }}" class="btn btn-sm"> {{--route("home") digunakan untuk mengembalikan ke tampilan view--}}
             <i class="bi bi-arrow-left-short fs-4"></i>
             <span class="fw-bold fs-5">Kembali</span>
         </a>
     </div> {{-- Bagian ini menampilkan tombol kembali yang mengarah ke halaman utama. --}}
 
-    @session('success')
+    @session('success') 
         <div class="alert alert-success alert-dismissible fade show" role="alert">
             {{ session('success') }}
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -21,7 +21,7 @@
             <div class="col card" style="height: 40vh;">
                 <div class="card-header d-flex align-items-center justify-content-between overflow-hidden">
                     <h3 class="fw-bold fs-4 text-truncate mb-0" style="width: 80%">
-                        {{ $task->name }}
+                        {{ $task->name }} {{--variabel ini digunakan untuk menampilkan name dari database,variabel task diambil dari controller--}}
                     </h3>
                     <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal"
                         data-bs-target="#editTaskModal">
@@ -30,7 +30,7 @@
                 </div>
                 <div class="card-body">
                     <p>
-                        {{ $task->description }}
+                        {{ $task->description }} {{--variabel ini digunakan untuk menampilkan description dari database,variabel task diambil dari taskcontroller--}}
                     </p>
                 </div> {{--Bagian ini adalah kartu utama yang menampilkan card--}}
                 <div class="card-footer">
@@ -47,7 +47,6 @@
                 <div class="">
                     <h2 class="">Ada dilist :</h2>
                 </div>
-                {{-- <h4>Priotitas:</h4> --}}
                 <div style="font-family:fantasy;">
                     <div class="d-flex flex-column align-items-center">
                         <h2>{{ $task->list->name }}</h2>
