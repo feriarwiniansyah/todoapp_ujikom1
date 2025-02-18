@@ -9,11 +9,8 @@
             <div class="col-md-8 mb-3">
                 <div class="card p-3 d-flex align-items-center h-100">
                     <div class="d-flex align-items-start gap-3 w-100">
-                        <!-- Gambar di kiri -->
                         <img src="{{ asset('image/feri.jpg') }}" class="rounded-3" 
                              style="width: 250px; height: 340px; object-fit: cover;" alt="Feri">
-                        
-                        <!-- Teks di kanan -->
                         <div class="flex-grow-1">
                             <h4 class="mb-2"><strong>Feri Arwiniansyah</strong></h4>
                             <p class="mb-1"><strong>Asal:</strong> Subang</p>
@@ -41,7 +38,7 @@
                     <hr>
                     <p class="mb-1"><strong>Usia:</strong></p>
                     <p>17 tahun</p>
-                    <div class="flex-grow-1"></div> <!-- Mencegah konten terlalu padat -->
+                    <div class="flex-grow-1"></div>
                 </div>
             </div>
         </div>
