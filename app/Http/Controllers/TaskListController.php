@@ -16,12 +16,12 @@ class TaskListController extends Controller
             'name' => $request->name
         ]);
 
-        return redirect()->back();
+        return redirect()->back(); //digunakan untuk mengarahkan ke halaman sebelumnya
     }
 
     public function destroy($id) {
-        TaskList::findOrFail($id)->delete();
+        TaskList::findOrFail($id)->delete(); //digunakan untuk menghapus data
 
-        return redirect()->back()->with('success', 'TaskList Berhasil ditambahkan');
+        return redirect()->back()->with('success', 'TaskList Berhasil ditambahkan'); //digunakan untuk mengarahkan ke halaman sebelumnya
     }
 }
