@@ -5,8 +5,8 @@ use App\Http\Controllers\TaskListController;
 use Illuminate\Support\Facades\Route;
 
 // Membuat route untuk home
-Route::get('/', [TaskController::class, 'index'])->name('home');
-Route::get('/abput', [TaskController::class, 'about'])->name('about');
+Route::get('/', [TaskController::class, 'index'])->name('home'); //digunakan untuk route menampilkan index.blade
+Route::get('/about', [TaskController::class, 'about'])->name('about'); //digunakan sebagai route untuk menampilkan about.blade
 
 Route::resource('lists', TaskListController::class);
 
