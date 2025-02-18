@@ -44,12 +44,12 @@
                                                 </a>
                                             </div>
                                             <div class="d-flex">
-                                                <span class="badge bg-{{ $task->priorityClass }} text-white mx-2"> {{--ini digunakan untuk menampilkan priority dari setiap task yang variabelnya diambil dari taskcontroller-->}}
-                                                    {{ ucfirst($task->priority) }}
+                                                <span class="badge bg-{{ $task->priorityClass }} text-white mx-2"> {{--ini digunakan untuk menampilkan priority dari setiap task yang variabelnya diambil dari taskcontroller--}}
+                                                    {{ ucfirst($task->priority) }} {{--ini digunakan untuk menampilkan priority dari setiap task yang variabelnya diambil dari taskcontroller--}}
                                                 </span>
-                                                <form action="{{ route('tasks.destroy', $task->id) }}" method="POST">
-                                                    @csrf
-                                                    @method('DELETE')
+                                                <form action="{{ route('tasks.destroy', $task->id) }}" method="POST"> {{--ini digunakan untuk mengarahkan ke validasi destroy di taskcontroller--}}
+                                                    @csrf {{-- CSRF token adalah cara yang bisa dilakukan oleh pihak website untuk memastikan permintaan yang dilakukan berasal dari pengguna --}}
+                                                    @method('DELETE') {{--ini digunakan untuk menghapus task--}}
                                                     <button type="submit" class="btn btn-sm p-0 text-danger">
                                                         <i class="bi bi-x-circle fs-5"></i>
                                                     </button>
