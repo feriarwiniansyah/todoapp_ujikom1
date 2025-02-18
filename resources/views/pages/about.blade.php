@@ -1,15 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<style>
-    .card-hover {
-    transition: transform 0.1s ease-out;
-    will-change: transform;
-    transform-style: preserve-3d;
-}
-
-</style>
-<div class="card d-flex flex-column align-items-center justify-content-center w-75 mx-auto p-3 rounded-5 shadow" 
+<div class="card d-flex flex-column align-items-center justify-content-center w-75 mx-auto p-3 rounded-50 shadow" 
 style="font-family:cursive;">
 <!-- Bagian Foto dan Heading -->
 <div class="text-center">
@@ -21,13 +13,13 @@ style="font-family:cursive;">
 
 <!-- Bagian Perkenalan -->
 <div class="mb-4 text-center">
-<h4>Let Me Introduce Myself Everyone</h4>
+<h4>Let Me Introduce Myself Everyone</h4> 
 </div>
 
 <!-- Bagian Informasi -->
 <div class="container">
     <div class="row gap-2 justify-content-center">
-        <!-- Kolom profile -->
+        <!-- Tampilan Kolom profile -->
         <div class="col-md-4 mb-4 card card-hover rounded-5 p-3 shadow">
             <h4 class="font">
                 <strong>My Name is:</strong>
@@ -41,7 +33,7 @@ style="font-family:cursive;">
             </h4>
         </div>
 
-        <!-- Kolom kontak -->
+        <!-- Tampilan Kolom kontak -->
         <div class="col-md-4 mb-4 card card-hover rounded-5 p-3 w-50 shadow">
             <h4>
                 <strong>Email:</strong>
@@ -56,5 +48,4 @@ style="font-family:cursive;">
 </div>
 </div>
 </div>
-
 @endsection
