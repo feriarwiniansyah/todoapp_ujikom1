@@ -15,23 +15,23 @@
     <style>
         body {
             background-color: #E6F4F1;
-        };
+        }; /*warna latar belakang*/
     </style>
 </head>
 
 <body class="overflow-x-hidden"> <!-- overflow digunakan untuk Disable horizontal scroll -->
     <div class="d-flex">
-        <!-- Sidebar -->
-            @include('partials.sidebar')
+        <!-- menampilkan Sidebar -->
+            @include('partials.sidebar') 
 
-        <!-- Main Content -->
+        <!-- menampilkan dari section Content -->
         <div class="flex-grow-1 p-2">
             @yield('content') 
             <!--yeild adalah syntax yang digunakan untuk memberikan tempat pada content yang akan diisi dari view yang menjalankan section content -->
         </div>
     </div>
 
-    <!-- Modal Section -->
+    <!-- Modal -->
     @include('partials.modal')
 
     <!-- Scripts -->
