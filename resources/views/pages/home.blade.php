@@ -21,9 +21,9 @@
             @foreach ($lists as $list)
                 <div class="card flex-shrink-0 shadow-sm border-0 rounded-lg bg-light" style="width: 20rem; max-height: 80vh;">
                     <div class="card-header d-flex align-items-center justify-content-between text-white rounded-top" style="background-color: #0B2D64">
-                        <h5 class="card-title m-0 fw-bold">{{ $list->name }}</h5>
-                        <form action="{{ route('lists.destroy', $list->id) }}" method="POST">
-                            @csrf
+                        <h5 class="card-title m-0 fw-bold">{{ $list->name }}</h5> <!-- ini digunakan untuk mengambil data list yang ada di database -->
+                        <form action="{{ route('lists.destroy', $list->id) }}" method="POST"> <!-- ini digunakan untuk mengarahkan ke validasi destroy di taskcontroller-->
+                            @csrf <!-- CSRF token adalah cara yang bisa dilakukan oleh pihak website untuk memastikan permintaan yang dilakukan berasal dari pengguna -->
                             @method('DELETE')
                             <button type="submit" class="btn btn-sm p-0 text-white">
                                 <i class="bi bi-trash fs-5"></i>
@@ -33,18 +33,18 @@
 
                     <div class="card-body d-flex flex-column gap-2 overflow-auto" style="background-color: #deffd646">
                         @foreach ($tasks as $task)
-                            @if ($task->list_id == $list->id)
+                            @if ($task->list_id == $list->id) <!----ini digunakan untuk mengambil data list_id yang ada di database---->
                                 <div class="card border-0 shadow-sm">
                                     <div class="card-body d-flex flex-column gap-2">
                                         <div class="d-flex align-items-center justify-content-between p-2 rounded-top" style="background-color: #B2C9AD">
                                             <div class="d-flex gap-4">
-                                                <a href="{{ route('tasks.show', $task->id)}}" 
-                                                    class="fw-bold m-0 {{ $task->is_completed ? 'text-decoration-line-through text-muted' : '' }}">
-                                                    {{ $task->name }}
+                                                <a href="{{ route('tasks.show', $task->id)}}" {{--ini digunakan untuk mengarahkan ke halaman detail--}}
+                                                    class="fw-bold m-0 {{ $task->is_completed ? 'text-decoration-line-through text-muted' : '' }}"> {{--ini digunakan untuk menampilkan text-decoration-line-through jika task sudah selesai--}}
+                                                    {{ $task->name }} {{----ini digunakan untuk mengambil data name yang ada di database----}}
                                                 </a>
                                             </div>
                                             <div class="d-flex">
-                                                <span class="badge bg-{{ $task->priorityClass }} text-white mx-2">
+                                                <span class="badge bg-{{ $task->priorityClass }} text-white mx-2"> {{--ini digunakan untuk menampilkan priority dari setiap task yang variabelnya diambil dari taskcontroller-->}}
                                                     {{ ucfirst($task->priority) }}
                                                 </span>
                                                 <form action="{{ route('tasks.destroy', $task->id) }}" method="POST">
