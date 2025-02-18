@@ -37,6 +37,6 @@ class Task extends Model
     } //ini untuk memunculkan warna disetiap field priority
 
     public function list() {
-        return $this->belongsTo(TaskList::class, 'list_id');
+        return $this->belongsTo(TaskList::class, 'list_id');//ini untuk menghubungkan ke table tasklist
     }
 }
