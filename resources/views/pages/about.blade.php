@@ -45,6 +45,14 @@
 
         <!-- Bagian Kontak -->
         <div class="row justify-content-between">
+            <div class="col-md-4">
+                <div class="card p-3 h-100 d-flex flex-column">
+                    <h5 class="mb-2 text-center"><strong>Informasi Lain</strong></h5>
+                    <p class="mb-1"><strong>Github :</strong> feriarwiniansyah117</p>
+                    <p class="mb-0"><strong>Instagram :</strong> @arfer_17</p>
+                    <div class="flex-grow-1"></div>
+                </div>
+            </div>
             <div class="col-md-8">
                 <div class="card p-3 h-100 d-flex flex-column">
                     <h5 class="mb-2 text-center"><strong>Kontak</strong></h5>
@@ -55,14 +63,6 @@
                 </div>
             </div>
 
-            <div class="col-md-4">
-                <div class="card p-3 h-100 d-flex flex-column">
-                    <h5 class="mb-2 text-center"><strong>Informasi Lain</strong></h5>
-                    <p class="mb-1"><strong>Github :</strong> feriarwiniansyah117</p>
-                    <p class="mb-0"><strong>Instagram :</strong> @arfer_17</p>
-                    <div class="flex-grow-1"></div>
-                </div>
-            </div>
         </div>
     </div>
 </div>
