@@ -39,7 +39,7 @@
                                         <div class="d-flex align-items-center justify-content-between p-2 rounded-top" style="background-color: #B2C9AD">
                                             <div class="d-flex gap-4">
                                                 <a href="{{ route('tasks.show', $task->id)}}" {{--ini digunakan untuk mengarahkan ke halaman detail--}}
-                                                    class="fw-bold m-0 {{ $task->is_completed ? 'text-decoration-line-through text-muted' : '' }}"> {{--ini digunakan untuk menampilkan text-decoration-line-through jika task sudah selesai--}}
+                                                    class="fw-bold m-0 text-dark {{ $task->is_completed ? 'text-decoration-line-through text-muted' : '' }}"  style="text-decoration: none"> {{--ini digunakan untuk menampilkan text-decoration-line-through jika task sudah selesai--}}
                                                     {{ $task->name }} {{----ini digunakan untuk mengambil data name yang ada di database----}}
                                                 </a>
                                             </div>
