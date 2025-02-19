@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('task_lists', function (Blueprint $table) {
+        Schema::create('task_lists', function (Blueprint $table) /*fungsi ini digunakan untuk membuat table task_lists */ {
             $table->id(); // setiap data pasti ada id || wajib ada
             $table->string('name')->unique();
             $table->timestamps();

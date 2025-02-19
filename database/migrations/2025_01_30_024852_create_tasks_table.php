@@ -11,13 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tasks', function (Blueprint $table) {
+        Schema::create('tasks', function (Blueprint $table) /*fungsi ini digunakan untuk membuat table tasks */ {
             $table->id();
             $table->string('name'); 
             $table->string('description')->nullable();  
             $table->boolean('is_completed')->default(false);
             $table->enum('priority', ['low', 'medium', 'high'])->default('medium');
-            $table->timestamps();
+            $table->timestamps(); //ini adalah field dari table
 
             $table->foreignId('list_id')->constrained('task_lists', 'id')->onDelete('cascade');
         });
