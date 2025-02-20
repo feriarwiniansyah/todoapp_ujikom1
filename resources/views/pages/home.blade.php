@@ -82,7 +82,7 @@
                     </div> {{--digunakan untuk menampilkan jumlah task------}}
                 </div>
             @endforeach
-            <button type="button" class="btn btn-outline-primary flex-shrink-0 d-flex justify-content-center align-items-center gap-2 p-1 rounded-lg mb-3" style="width: 20rem; height: fit-content;" data-bs-toggle="modal" data-bs-target="#addListModal">
+            <button type="button" class="btn btn-outline-primary flex-shrink-0 d-block justify-content-center align-items-center gap-2 p-1 rounded-lg mb-3" style="width: 20rem; height: fit-content;" data-bs-toggle="modal" data-bs-target="#addListModal">
                 <i class="bi bi-plus-square fs-4"></i> Tambah List Baru
             </button> {{--digunakan untuk menambahkan  list baru--}}
         </div>
