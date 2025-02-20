@@ -14,7 +14,7 @@ class TaskList extends Model
         'updated_at'
     ]; //untuk menentukan colom mana yang tidak boleh diisi
 
-    public function taskis() {
+    public function tasks() {
         return $this->hasMany(Task::class, 'list_id'); //digunakan untuk menghubungkan ke table task
     }
 }
